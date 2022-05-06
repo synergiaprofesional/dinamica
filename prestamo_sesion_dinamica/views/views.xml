@@ -1,0 +1,49 @@
+<odoo>
+<data>
+     <record id="prestamo_zona_inherit" model="ir.ui.view">
+        <field name="name">Zona – Extension</field>
+        <field name="model">prestamo.zona</field>
+        <field name="inherit_id" ref="prestamo.zona_template_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+              <field name="barrios"/>
+            </field>
+        </field>
+    </record>
+
+  <!-- <field name="barrio_id" placeholder="Barrio"/> -->
+  <record id="prestamo_cliente_inherit" model="ir.ui.view">
+        <field name="name">Cliente – Extension</field>
+        <field name="model">prestamo.cliente</field>
+        <field name="inherit_id" ref="prestamo.cliente_template_form"/>
+        <field name="arch" type="xml">
+           <field name="barrio_id" placeholder="Barrio" options="{'create':false}"/>
+        </field>
+    </record>
+
+    <!-- <field name="cobrador_id" /> -->
+       <!-- <record id="prestamo_cobro_inherit" model="ir.ui.view">
+        <field name="name">Cobro – Extension</field>
+        <field name="model">prestamo.cobro</field>
+        <field name="inherit_id" ref="prestamo_controlcierre.prestamo_cobro_form"/>
+        <field name="arch" type="xml">
+            <field name="cobrador_id" position="replace">
+              <field name="cobrador_ids" widget="many2many_tags"/>
+            </field>
+        </field>
+    </record> -->
+
+
+    <!-- prestamo_control_form -->
+    <!-- <record id="prestamo_session_inherit" model="ir.ui.view">
+        <field name="name">Session – Extension</field>
+        <field name="model">prestamo.session</field>
+        <field name="inherit_id" ref="prestamo_controlcierre.prestamo_control_form"/>
+        <field name="arch" type="xml">
+            <field name="cobrador_id" position="replace">
+              <field name="cobrador_id" />
+            </field>
+        </field>
+    </record> -->
+</data>
+</odoo>
